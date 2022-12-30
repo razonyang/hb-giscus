@@ -1,0 +1,17 @@
+{
+  "name": "HB Giscus Comments Module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/razonyang/hb-giscus.git"
+  },
+  "author": "Razon Yang <razonyang@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/razonyang/hb-giscus/issues"
+  },
+  "homepage": "https://github.com/razonyang/hb-giscus",
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "prettier-plugin-go-template": "^0.0.13"
+  }
+}
