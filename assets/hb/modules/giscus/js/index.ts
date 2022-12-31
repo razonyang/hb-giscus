@@ -1,10 +1,8 @@
 import Giscus from 'giscus/js'
-import { default as params } from '@params'
 (() => {
     'use strict'
 
-    const endpoint = params.hb.docs.giscus.endpoint ?? params.giscus.endpoint
-    const giscus = new Giscus(endpoint)
+    const giscus = new Giscus()
 
     const setTheme = (theme) => {
         giscus.setTheme(theme)
