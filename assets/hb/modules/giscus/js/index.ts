@@ -13,14 +13,17 @@ import Giscus from 'giscus/js'
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+        document.body.addEventListener('giscus-load', () => {
+            // change the theme after loading the giscus frame.
+            const frame = document.querySelector('iframe.giscus-frame.giscus-frame--loading')
+            frame?.addEventListener('load', () => {
+                const theme = localStorage.getItem('hb-theme')
+                setTheme(theme === 'auto' ? getPreferredTheme() : theme)
+            })
+        })
+
         document.addEventListener('hb:theme', ((e: CustomEvent) => {
             setTheme(e.detail.theme)
         }) as EventListener)
-
-        // Make sure that the theme is match current color, since this script always misses the first theme change event.
-        setTimeout(() => {
-            const theme = localStorage.getItem('hb-theme')
-            setTheme(theme === 'auto' ? getPreferredTheme() : theme)
-        }, 3000)
     })
 })()
